@@ -2,13 +2,13 @@ specVersion: 0.0.2
 description: lottx for Ethereum
 repository: https://github.com/luckyx/luckyx_subgraph
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: Lottx
     network: mainnet
     source:
-      address: '0x3Aa5ebB10DC797CAC828524e59A333d0A371443c'
+      address: "0x3Aa5ebB10DC797CAC828524e59A333d0A371443c"
       abi: Lottx
     mapping:
       kind: ethereum/events
@@ -20,7 +20,7 @@ dataSources:
         - Round
       abis:
         - name: Lottx
-          file: ./abis/Lottx.json
+          file: Lottx\abis\Lottx.json
       eventHandlers:
         - event: LotteryOpen(indexed uint256,uint256,uint256,uint256,uint256,uint8[])
           handler: handleLotteryOpen
@@ -32,4 +32,4 @@ dataSources:
           handler: handleTicketsPurchase
         - event: TicketsClaim(indexed address,indexed uint256,uint256)
           handler: handleTicketsClaim
-      file: ./src/mapping.ts
+      file: Lottx\Lottx.wasm

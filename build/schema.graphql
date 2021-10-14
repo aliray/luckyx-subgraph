@@ -55,7 +55,7 @@ type Round @entity {
 
   claimed: Boolean
   totalTickets: BigInt!
-  ticketsNumbers: [Int!]
+
   "Block number"
   block: BigInt!
   "Block timestamp"
